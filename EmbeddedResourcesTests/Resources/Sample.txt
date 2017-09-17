@@ -1,0 +1,1 @@
+Sample file as embedded resource.
