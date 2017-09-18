@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedResources", "EmbeddedResources\EmbeddedResources.csproj", "{299ABABC-0BC3-4138-BDB5-7F50A60407D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedResourcesTests", "EmbeddedResourcesTests\EmbeddedResourcesTests.csproj", "{0D28FC4E-AF99-4C68-92D6-5D60CD232D20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedResources.Tests", "EmbeddedResources.Tests\EmbeddedResources.Tests.csproj", "{0D28FC4E-AF99-4C68-92D6-5D60CD232D20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

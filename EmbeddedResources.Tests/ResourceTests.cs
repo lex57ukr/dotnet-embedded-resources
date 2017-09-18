@@ -1,25 +1,18 @@
 ﻿using Xunit;
 using System;
-using System.Reflection;
-using EmbeddedResources;
+using static EmbeddedResources.Tests.Resources.Factory;
 
 
-namespace EmbeddedResourcesTests
+namespace EmbeddedResources.Tests
 {
     public class ResourceTests
     {
-        private const string ExistingResourceName
-            = "EmbeddedResourcesTests.Resources.Sample.txt";
-
-        private static Assembly Assembly
-            => Assembly.GetExecutingAssembly();
-
         [Fact]
         public void Ctor_NullAssembly_ThrowsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(
                 "assembly",
-                () => new Resource(null, ExistingResourceName)
+                () => new Resource(null, ResourceName())
             );
         }
 
@@ -55,8 +48,8 @@ namespace EmbeddedResourcesTests
         [Fact]
         public void Ctor_FromExecutingAssembly_AreEqual()
         {
-            var x = new Resource(Assembly, ExistingResourceName);
-            var y = new Resource(ExistingResourceName);
+            var x = new Resource(MyAssembly, ResourceName());
+            var y = new Resource(ResourceName());
 
             Assert.Equal(x, y);
         }
@@ -64,8 +57,8 @@ namespace EmbeddedResourcesTests
         [Fact]
         public void Ctor_FromExecutingAssembly_ProduceSameHashCode()
         {
-            var x = new Resource(Assembly, ExistingResourceName).GetHashCode();
-            var y = new Resource(ExistingResourceName).GetHashCode();
+            var x = new Resource(MyAssembly, ResourceName());
+            var y = new Resource(ResourceName());
 
             Assert.Equal(x, y);
         }
@@ -73,21 +66,21 @@ namespace EmbeddedResourcesTests
         [Fact]
         public void Equals_AnotherObject_ReturnFalse()
         {
-            var result = new Resource(ExistingResourceName).Equals(new object());
+            var result = NewResource().Equals(new object());
             Assert.False(result);
         }
 
         [Fact]
         public void Equals_Null_ReturnFalse()
         {
-            var result = new Resource(ExistingResourceName).Equals(null);
+            var result = NewResource().Equals(null);
             Assert.False(result);
         }
 
         [Fact]
         public void Equals_Self_ReturnTrue()
         {
-            var x = new Resource(ExistingResourceName);
+            var x = NewResource();
 
             // ReSharper disable once EqualExpressionComparison
             var result = x.Equals(x);
@@ -97,15 +90,17 @@ namespace EmbeddedResourcesTests
         [Fact]
         public void ToString_ContainsAssemblyFullName()
         {
-            var result = new Resource(ExistingResourceName).ToString();
-            Assert.Contains(Assembly.FullName, result);
+            var result = NewResource().ToString();
+            Assert.Contains(MyAssembly.FullName, result);
         }
 
         [Fact]
         public void ToString_ContainsResourceName()
         {
-            var result = new Resource(ExistingResourceName).ToString();
-            Assert.Contains(ExistingResourceName, result);
+            var expected = ResourceName();
+            var result   = NewResource().ToString();
+
+            Assert.Contains(expected, result);
         }
     }
 }

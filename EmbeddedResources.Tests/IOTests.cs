@@ -1,21 +1,16 @@
 using Xunit;
-using EmbeddedResources;
 using static EmbeddedResources.IO;
+using static EmbeddedResources.Tests.Resources.Factory;
 
-namespace EmbeddedResourcesTests
+
+namespace EmbeddedResources.Tests
 {
     public class IOTests
     {
-        private const string FormatResourceName
-            = "EmbeddedResourcesTests.Resources.Sample.format.txt";
-
-        private const string MultilineResourceName
-            = "EmbeddedResourcesTests.Resources.Sample.multiline.txt";
-
         [Fact]
         public void GetTextContents_Multiline_ReturnAllContent()
         {
-            var x      = new Resource(MultilineResourceName);
+            var x      = NewResource(Samples.Multiline);
             var result = GetTextContents(x);
 
             const string expected = "Line 1\nLine 2\nLine 3\n";
@@ -25,7 +20,7 @@ namespace EmbeddedResourcesTests
         [Fact]
         public void GetTextContents_Formatted_ReturnFormattedContent()
         {
-            var x      = new Resource(FormatResourceName);
+            var x      = NewResource(Samples.Format);
             var result = GetTextContents(x, "XYZ", 123);
 
             const string expected = "Placeholders:\n* XYZ\n* 123\n";
