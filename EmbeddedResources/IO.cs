@@ -11,6 +11,17 @@ namespace EmbeddedResources
     public static class IO
     {
         /// <summary>
+        /// Get formatted text contents of the <paramref name="resource"/>.
+        /// </summary>
+        /// <param name="resource">The source.</param>
+        /// <param name="arg">Format argument.</param>
+        /// <returns>String contents of the <paramref name="resource"/>.</returns>
+        public static string GetTextContents(
+            Resource resource,
+            params object[] arg
+        ) => string.Format(GetTextContents(resource), arg);
+
+        /// <summary>
         /// Get text contents of the <paramref name="resource"/>.
         /// </summary>
         /// <param name="resource">The source.</param>
@@ -26,6 +37,7 @@ namespace EmbeddedResources
                     leaveOpen: true
                 )
             );
+
         private static string ReadStringToEnd(
             Stream source,
             Encoding encoding,

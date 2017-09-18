@@ -6,6 +6,9 @@ namespace EmbeddedResourcesTests
 {
     public class IOTests
     {
+        private const string FormatResourceName
+            = "EmbeddedResourcesTests.Resources.Sample.format.txt";
+
         private const string MultilineResourceName
             = "EmbeddedResourcesTests.Resources.Sample.multiline.txt";
 
@@ -19,5 +22,14 @@ namespace EmbeddedResourcesTests
             Assert.Equal(expected, result);
         }
 
+        [Fact]
+        public void GetTextContents_Formatted_ReturnFormattedContent()
+        {
+            var x      = new Resource(FormatResourceName);
+            var result = GetTextContents(x, "XYZ", 123);
+
+            const string expected = "Placeholders:\n* XYZ\n* 123\n";
+            Assert.Equal(expected, result);
+        }
     }
 }
