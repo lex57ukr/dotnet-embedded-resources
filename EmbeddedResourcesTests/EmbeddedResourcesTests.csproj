@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Format2.txt" />
     <EmbeddedResource Include="Resources\Sample.txt" />
+    <EmbeddedResource Include="Resources\Sample.multiline.txt" />
   </ItemGroup>
 
 </Project>

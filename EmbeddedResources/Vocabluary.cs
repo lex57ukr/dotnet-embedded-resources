@@ -24,15 +24,5 @@ namespace EmbeddedResources
                 return func(target);
             }
         }
-
-        /// <summary>
-        /// Format a string. If <paramref name="format"/> is <b>null</b>,
-        /// return <b>null</b>.
-        /// </summary>
-        /// <param name="format">The string to be formatted. Can be <b>null</b>.</param>
-        /// <param name="arg">Format argument.</param>
-        /// <returns>Formnatted string or <b>null</b>.</returns>
-        public static string Format(string format, params object[] arg)
-            => format != null ? string.Format(format, arg) : null;
     }
 }
