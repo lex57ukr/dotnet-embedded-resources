@@ -6,6 +6,9 @@ using static EmbeddedResources.Hashing;
 
 namespace EmbeddedResources
 {
+    /// <summary>
+    /// Embedded resource.
+    /// </summary>
     public class Resource
     {
         private Assembly Assembly { get; }
