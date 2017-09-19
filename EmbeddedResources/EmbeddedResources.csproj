@@ -7,11 +7,11 @@
     <VersionPrefix>1.0.0</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
     <Authors>Alexander Akhtyrskiy</Authors>
-    <Company>lex57ukr</Company>
+    <Company></Company>
     <NeutralLanguage>en-US</NeutralLanguage>
     <AssemblyTitle>Embedded Resources</AssemblyTitle>
     <Description>Functional API for accessing embedded resources at runtime</Description>
-    <Copyright>2017</Copyright>
+    <Copyright>(c) 2017 Alexander Akhtyrskiy</Copyright>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
