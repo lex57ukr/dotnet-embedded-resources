@@ -13,8 +13,8 @@ namespace EmbeddedResources.Tests
             var x      = NewResource(Samples.Multiline);
             var result = GetTextContents(x);
 
-            const string expected = "Line 1\nLine 2\nLine 3\n";
-            Assert.Equal(expected, result);
+            var expected = "Line 1\nLine 2\nLine 3\n";
+            Assert.Equal(expected, result, ignoreLineEndingDifferences: true);
         }
 
         [Fact]
@@ -24,7 +24,7 @@ namespace EmbeddedResources.Tests
             var result = GetTextContents(x, "XYZ", 123);
 
             const string expected = "Placeholders:\n* XYZ\n* 123\n";
-            Assert.Equal(expected, result);
+            Assert.Equal(expected, result, ignoreLineEndingDifferences: true);
         }
     }
 }
