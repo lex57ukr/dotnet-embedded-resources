@@ -6,3 +6,8 @@ script:
  - dotnet restore
  - dotnet build --configuration "Release"
  - dotnet test --configuration "Release" EmbeddedResources.Tests/EmbeddedResources.Tests.csproj
+
+branches:
+  only:
+  - master
+  - develop
