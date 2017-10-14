@@ -60,7 +60,7 @@ namespace EmbeddedResources
         /// </summary>
         /// <returns>Resource name.</returns>
         public override string ToString()
-            => $"Resource '{this.Name}' in '{this.Assembly.FullName}'.";
+            => $"Resource '{this.Name}' in '{this.Assembly.FullName}'";
 
         /// <summary>
         /// Open the resource stream.
