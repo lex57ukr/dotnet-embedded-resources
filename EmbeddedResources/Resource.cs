@@ -56,18 +56,6 @@ namespace EmbeddedResources
         }
 
         /// <summary>
-        /// Initializes a resource name from the calling assembly
-        /// and its fully qualified name.
-        /// </summary>
-        /// <param name="name">The fully qualified resource name.</param>
-        /// <exception name="ArgumentNullException"/>
-        /// <exception name="ArgumentException"/>
-        /// <exception name="ResourceNotFoundException"/>
-        public Resource(string name)
-            : this(Assembly.GetCallingAssembly(), name)
-        { }
-
-        /// <summary>
         /// Get the fully qualified resource name.
         /// </summary>
         /// <returns>Resource name.</returns>

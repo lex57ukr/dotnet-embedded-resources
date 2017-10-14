@@ -21,7 +21,7 @@ namespace EmbeddedResources.Tests
         {
             Assert.Throws<ArgumentException>(
                 "name",
-                () => new Resource("*")
+                () => new Resource(MyAssembly, "*")
             );
         }
 
@@ -29,7 +29,7 @@ namespace EmbeddedResources.Tests
         {
             Assert.Throws<ArgumentNullException>(
                 "name",
-                () => new Resource(null)
+                () => new Resource(MyAssembly, null)
             );
         }
 
@@ -41,7 +41,7 @@ namespace EmbeddedResources.Tests
         {
             Assert.Throws<ArgumentException>(
                 "name",
-                () => new Resource(name)
+                () => new Resource(MyAssembly, name)
             );
         }
 
@@ -49,7 +49,7 @@ namespace EmbeddedResources.Tests
         public void Ctor_FromExecutingAssembly_AreEqual()
         {
             var x = new Resource(MyAssembly, ResourceName());
-            var y = new Resource(ResourceName());
+            var y = new Resource(MyAssembly, ResourceName());
 
             Assert.Equal(x, y);
         }
@@ -57,8 +57,8 @@ namespace EmbeddedResources.Tests
         [Fact]
         public void Ctor_FromExecutingAssembly_ProduceSameHashCode()
         {
-            var x = new Resource(MyAssembly, ResourceName());
-            var y = new Resource(ResourceName());
+            var x = new Resource(MyAssembly, ResourceName()).GetHashCode();
+            var y = new Resource(MyAssembly, ResourceName()).GetHashCode();
 
             Assert.Equal(x, y);
         }

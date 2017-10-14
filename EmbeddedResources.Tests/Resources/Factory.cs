@@ -31,6 +31,6 @@ namespace EmbeddedResources.Tests.Resources
             => $"{Namespace}.{NameByType[sample]}.txt";
 
         public static Resource NewResource(Samples sample = Samples.Default)
-            => new Resource(ResourceName(sample));
+            => new Resource(MyAssembly, ResourceName(sample));
     }
 }
