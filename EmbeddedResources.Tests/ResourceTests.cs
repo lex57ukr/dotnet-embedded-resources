@@ -25,6 +25,7 @@ namespace EmbeddedResources.Tests
             );
         }
 
+        [Fact]
         public void Ctor_NullName_ThrowsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(
