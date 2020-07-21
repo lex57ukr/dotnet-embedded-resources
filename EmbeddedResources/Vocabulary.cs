@@ -4,9 +4,9 @@
 namespace EmbeddedResources
 {
     /// <summary>
-    /// Functional vocabluary with language constructs.
+    /// Functional vocabulary with language constructs.
     /// </summary>
-    internal static class Vocabluary
+    internal static class Vocabulary
     {
         /// <summary>
         /// Execute a <paramref name="func"/> inside a protected using clause.
@@ -19,10 +19,8 @@ namespace EmbeddedResources
         public static TResult Using<T, TResult>(Func<T> init, Func<T, TResult> func)
             where T : IDisposable
         {
-            using (var target = init())
-            {
-                return func(target);
-            }
+            using var target = init();
+            return func(target);
         }
     }
 }

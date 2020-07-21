@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using System.Text;
-using static EmbeddedResources.Vocabluary;
+using static EmbeddedResources.Vocabulary;
 
 
 namespace EmbeddedResources
